@@ -69,6 +69,7 @@ public class ScannerView extends View {
 
     /**
      * Set No of objects on radar view
+     *
      * @param radarObjects
      */
     public void setRadarObjects(ArrayList<RadarObject> radarObjects) {
@@ -77,31 +78,33 @@ public class ScannerView extends View {
 
     /**
      * Set View Height
+     *
      * @param height : height in int
      */
-    public void setViewHeight(int height){
-        this.BITMAP_HEIGHT=height;
+    public void setViewHeight(int height) {
+        BITMAP_HEIGHT = height;
     }
 
     /**
      * Set View Width
+     *
      * @param width : width in int
      */
-    public void setViewWidth(int width){
-        this.BITMAP_WIDTH=width;
+    public void setViewWidth(int width) {
+        BITMAP_WIDTH = width;
     }
+
     /**
      * Set No of rings
+     *
      * @param noOfRings : no of rings counts
      */
-    public void setNoOfClircles(int noOfRings)
-    {
-        NO_OF_RING=noOfRings;
+    public void setNoOfClircles(int noOfRings) {
+        NO_OF_RING = noOfRings;
     }
 
 
     /**
-     *
      * @param widthMeasureSpec
      * @param heightMeasureSpec
      */
@@ -136,6 +139,7 @@ public class ScannerView extends View {
 
         mHandler.post(mRunnable);
 
+        // Draw Green Line
         float stopX = (float) (centerX + cx * Math.sin(counter));
         float stopY = (float) (centerY - cx * Math.cos(counter));
         canvas.drawLine(centerX, centerY, stopX, stopY, mPaintRing);

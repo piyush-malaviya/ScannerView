@@ -14,8 +14,8 @@ import java.util.ArrayList;
 
 public class ScannerView extends View {
 
-    private static int BITMAP_WIDTH = 40;
-    private static int BITMAP_HEIGHT = 40;
+    private static int BITMAP_WIDTH = 40; // Default
+    private static int BITMAP_HEIGHT = 40; // Default
     private static int BITMAP_CIRCLE_RADIUS = BITMAP_WIDTH / 2;
     private static int RADAR_RADIUS_METER = 100;
     private static int NO_OF_RING = 5;
@@ -66,6 +66,45 @@ public class ScannerView extends View {
         arrRadarObjects.add(new RadarObject("E", 80, 360));
         arrRadarObjects.add(new RadarObject("F", 100, 90));
     }
+
+    /**
+     * Set No of objects on radar view
+     * @param radarObjects
+     */
+    public void setRadarObjects(ArrayList<RadarObject> radarObjects) {
+        arrRadarObjects = radarObjects;
+    }
+
+    /**
+     * Set View Height
+     * @param height : height in int
+     */
+    public void setViewHeight(int height){
+        this.BITMAP_HEIGHT=height;
+    }
+
+    /**
+     * Set View Width
+     * @param width : width in int
+     */
+    public void setViewWidth(int width){
+        this.BITMAP_WIDTH=width;
+    }
+    /**
+     * Set No of rings
+     * @param noOfRings : no of rings counts
+     */
+    public void setNoOfClircles(int noOfRings)
+    {
+        NO_OF_RING=noOfRings;
+    }
+
+
+    /**
+     *
+     * @param widthMeasureSpec
+     * @param heightMeasureSpec
+     */
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
